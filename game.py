@@ -15,13 +15,26 @@ class Game:
         self.dealer_hand.print_one()
 
 
-    def game_loop(self):
+    def get_input(self):
         choices = ['h', 's']
         while True:
-            print('Do you want to hit or stand? ')
+            print('Do you want to hit or stand?')
             choice = input('(h) or (s): ')
-            if choice not in choices:
-                print("That's not a choice.")
-            elif choice == 'h':
+            if choice not in choice:
+                print("That's not a valid choice.")
+            else:
+                return choice
+
+
+    def game_loop(self):
+        while True:
+            choice = self.get_input()
+            if choice == 'h':
                 self.player_hand.draw()
                 self.player_hand.print_hand()
+
+            elif choice == 's':
+                print("Your score is: " + str(self.player_hand.get_hand_value()))
+                break
+            
+            
