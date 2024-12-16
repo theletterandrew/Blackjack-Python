@@ -2,12 +2,6 @@ class Card:
     def __init__(self, face, suit):
         self.face = face
         self.suit = suit
-        self.value = 0
-    
-    def get_name(self):
-        return self.face + ' of ' + self.suit
-
-    def get_value(self):
         if self.face == 'A':
             self.value = 1
         elif self.face == '2':
@@ -28,4 +22,9 @@ class Card:
             self.value = 9
         elif self.face == '10' or self.face == 'K' or self.face == 'Q' or self.face == 'J':
             self.value = 10
+    
+    def get_name(self):
+        return self.face + ' of ' + self.suit
+
+    def get_value(self):
         return self.value
