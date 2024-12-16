@@ -30,7 +30,8 @@ class Hand:
     def print_hand(self):
         for card in self.cards:
             print(card.get_name())
+    
 
-
-    def print_one(self):
-        print(self.cards[1].get_name())
+    def print_dealer(self):
+        for card in self.cards[1:]:
+            print(card.get_name())

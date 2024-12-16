@@ -12,7 +12,7 @@ class Game:
 
         self.dealer_hand.draw_two()
         print('Dealer shows: ')
-        self.dealer_hand.print_one()
+        self.dealer_hand.print_dealer()
 
 
     def get_input(self):
@@ -30,8 +30,9 @@ class Game:
         if self.dealer_hand.get_hand_value() <= 17:
             self.dealer_hand.draw()
             print("Dealer draws")
-            print("Dealer shows: ")
-            # TODO print out dealer cards except one
+            self.dealer_hand.print_dealer()
+        else:
+            print("Dealer stands.")
 
     def game_loop(self):
         while True:
