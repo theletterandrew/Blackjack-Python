@@ -21,8 +21,7 @@ class Deck:
         return self.cards
 
     def shuffle(self):
-        for i in range(1000):
-            random.shuffle(self.cards)
+        random.shuffle(self.cards)
 
     def draw_card(self):
         return self.cards.pop()

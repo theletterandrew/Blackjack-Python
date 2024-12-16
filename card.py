@@ -9,7 +9,7 @@ class Card:
 
     def get_value(self):
         if self.face == 'A':
-            self.value = 11
+            self.value = 1
         elif self.face == '2':
             self.value = 2
         elif self.face == '3':

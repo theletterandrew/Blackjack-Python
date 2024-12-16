@@ -33,9 +33,11 @@ class Game:
             self.dealer_hand.print_dealer()
         else:
             print("Dealer stands.")
+            return True
 
     def game_loop(self):
         while True:
+            done = False
             # Player's turn
             choice = self.get_input()
             if choice == 'h':
@@ -44,7 +46,9 @@ class Game:
 
             elif choice == 's':
                 print("Your score is: " + str(self.player_hand.get_hand_value()))
+                done = True
             
             # Dealer's turn
-            self.dealer_turn()
-            
+            dealer_choice = self.dealer_turn()
+            if dealer_choice:
+                break
