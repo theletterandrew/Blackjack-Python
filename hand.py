@@ -22,6 +22,7 @@ class Hand:
 
 
     def get_hand_value(self):
+        self.value = 0
         for card in self.cards:
             self.value += card.get_value()
         return self.value
