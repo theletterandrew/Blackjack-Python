@@ -26,8 +26,16 @@ class Game:
                 return choice
 
 
+    def dealer_turn(self):
+        if self.dealer_hand.get_hand_value() <= 17:
+            self.dealer_hand.draw()
+            print("Dealer draws")
+            print("Dealer shows: ")
+            # TODO print out dealer cards except one
+
     def game_loop(self):
         while True:
+            # Player's turn
             choice = self.get_input()
             if choice == 'h':
                 self.player_hand.draw()
@@ -35,6 +43,7 @@ class Game:
 
             elif choice == 's':
                 print("Your score is: " + str(self.player_hand.get_hand_value()))
-                break
             
+            # Dealer's turn
+            self.dealer_turn()
             
