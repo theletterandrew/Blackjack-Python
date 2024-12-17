@@ -14,4 +14,4 @@ dealer_hand = Hand(deck)
 game = Game(player_hand, dealer_hand)
 game.new_game()
 game.game_loop()
-
+game.reveal_dealer_hand()

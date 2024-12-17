@@ -6,6 +6,7 @@ class Hand:
         self.cards = []
         self.deck = deck
         self.value = 0
+        self.aces = 0
 
 
     def get_hand(self):
@@ -36,3 +37,10 @@ class Hand:
     def print_dealer(self):
         for card in self.cards[1:]:
             print(card.get_name())
+
+
+    def check_aces(self):
+        for card in self.cards:
+            if card.get_ace():
+                self.aces += 1
+        return self.aces
