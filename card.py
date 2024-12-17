@@ -4,7 +4,7 @@ class Card:
         self.suit = suit
         self.is_ace = False
         if self.face == 'A':
-            self.value = 1
+            self.value = 11
             self.is_ace = True
         elif self.face == '2':
             self.value = 2
